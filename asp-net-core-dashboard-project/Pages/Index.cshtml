@@ -1,0 +1,16 @@
+@page
+
+<script type="text/javascript">
+    function onBeforeRender(dashboardControl) {
+        dashboardControl.registerExtension(new DevExpress.Dashboard.DashboardPanelExtension(dashboardControl));
+    }
+</script>
+
+<div style="position: absolute; left: 0; top: 0; right: 0; bottom: 0;">
+@(Html.DevExpress().Dashboard("dashboardControl1")
+    .ControllerName("DefaultDashboard")
+    .Width("100%")
+    .Height("100%")
+    .OnBeforeRender("onBeforeRender")
+)
+</div>
